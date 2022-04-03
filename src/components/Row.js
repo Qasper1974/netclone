@@ -26,8 +26,8 @@ const Row = (props) => {
 					<img
                     	/* add key to optimize performance */
 						key={movie.id}
-						className={styles.row__poster}
-						src={`${baseUrlForPic}${movie.poster_path}`}
+						className={`${styles.row__poster} ${props.largePic && styles.row__poster__large}`}
+						src={`${baseUrlForPic}${props.largePic ? movie.poster_path : movie.backdrop_path}`}
 						alt={movie.name}
 					/>
 				))}
