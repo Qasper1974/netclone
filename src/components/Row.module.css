@@ -1,10 +1,27 @@
-.row__poster {
-    object-fit: contain;
-    width: 100%;
-    max-height: 400px;
-    margin: 5px;
+.row__posters {
+	display: flex;
+	overflow-x: scroll;
+	/* add overflow-y: hidden to prevent vertical scroll */
+	overflow-y: hidden;
+	/* add padding to prevent cropping */
+	padding: 20px;
 }
 
-.row__posters {
-    display: flex;
+
+.row__posters::-webkit-scrollbar { 
+	/* remove scrollbar without removing functionality */
+	display: none
+}
+
+.row__poster {
+	object-fit: contain;
+	width: 100%;
+	max-height: 300px;
+	margin: 5px;
+	border-radius: 12px;
+	transition: transform 300ms;
+}
+
+.row__poster:hover {
+	transform: scale(1.08);
 }
