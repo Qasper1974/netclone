@@ -24,6 +24,8 @@ const Row = (props) => {
 			<div className={styles.row__posters}>
 				{movies.map((movie) => (
 					<img
+                    	/* add key to optimize performance */
+						key={movie.id}
 						className={styles.row__poster}
 						src={`${baseUrlForPic}${movie.poster_path}`}
 						alt={movie.name}
