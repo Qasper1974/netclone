@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "../axios";
 import requests from "../requests";
 
+import styles from './Banner.module.css'
+
 const baseUrlForPic = "https://image.tmdb.org/t/p/original/";
 
 function Banner() {
@@ -20,10 +22,17 @@ function Banner() {
 		}
 		FetchData();
 	}, []);
-	console.log(movie);
+
+    function truncateString(str, num) {
+        if (str?.length <= num) {
+          return str
+        }
+        return str?.slice(0, num) + '...'
+      }
+
 	return (
 		<header
-			className="banner"
+			className={styles.banner}
 			style={{
 				backgroundSize: "cover",
 				backgroundImage: `url(
@@ -32,14 +41,14 @@ function Banner() {
 				backgroundPosition: "center center",
 			}}
 		>
-			<div className="banner__contents">
-				<h1>{movie?.title || movie?.name || movie?.original_name}</h1>
-				<div className="banner__buttons">
-					<button className="banner__button">Play</button>
-					<button className="banner__button">My List</button>
+			<div className={styles.banner__contents}>
+				<h1 className={styles.banner__title}>{movie?.title || movie?.name || movie?.original_name}</h1>
+				<div className={styles.banner__buttons}>
+					<button className={styles.banner__button}>Play</button>
+					<button className={styles.banner__button}>My List</button>
 				</div>
-                <h1 className="banner__description">
-                    {movie?.overview}
+                <h1 className={styles.banner__description}>
+                    {truncateString(movie?.overview,150)}
                 </h1>
 			</div>
 			<img src={movie.backdrop_path} />
