@@ -51,7 +51,7 @@ function Banner() {
                     {truncateString(movie?.overview,150)}
                 </h1>
 			</div>
-			<img src={movie.backdrop_path} />
+                <div className={styles.banner__fadeBottom} />
 		</header>
 	);
 }

@@ -8,7 +8,7 @@ function App() {
 		<div className="app">
 			<Banner />
 			<Row
-				title="Netflix Originals"
+				title="NETFLIX ORIGINALS"
 				fetchUrl={requests.fetchNetflixOriginals}
                 largePic={true}
 			/>
