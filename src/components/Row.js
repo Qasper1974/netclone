@@ -16,14 +16,13 @@ const Row = (props) => {
 		}
 		fetchData();
 	}, [props.fetchUrl]);
-	console.table(movies);
 
 	return (
 		<div className={styles.row}>
 			<h2>{props.title}</h2>
 			<div className={styles.row__posters}>
 				{movies.map((movie) => (
-					<img
+					 (movie.poster_path) && (movie.backdrop_path) && <img
                     	/* add key to optimize performance */
 						key={movie.id}
 						className={`${styles.row__poster} ${props.largePic && styles.row__poster__large}`}
