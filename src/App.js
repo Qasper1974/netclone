@@ -9,12 +9,12 @@ function App() {
 		<div className="app">
             <Navbar />
 			<Banner />
+            <Row title="Trending Now" fetchUrl={requests.fetchTrending}
+            largePic={true} />
 			<Row
 				title="NETFLIX ORIGINALS"
 				fetchUrl={requests.fetchNetflixOriginals}
-                largePic={true}
 			/>
-			<Row title="Trending Now" fetchUrl={requests.fetchTrending} />
 			<Row title="History Movies" fetchUrl={requests.fetchHistoryMovies} />
 			<Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
 			<Row title="Western Movies" fetchUrl={requests.fetchWesternMovies} />
